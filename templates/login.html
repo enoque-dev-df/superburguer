@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Entrar | SuperBurguer{% endblock %}
+{% block content %}
+<section class="flex min-h-[70vh] items-center justify-center px-5 py-16">
+  <div class="w-full max-w-md rounded-3xl border border-white/10 bg-white/[0.04] p-8 shadow-2xl shadow-black/20 sm:p-10">
+    <div class="mb-8 text-center">
+      <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-400 text-3xl">🍔</div>
+      <h1 class="mt-5 text-3xl font-black">Bem-vindo de volta!</h1>
+      <p class="mt-2 text-stone-400">Entre na sua conta SuperBurguer.</p>
+    </div>
+    <form method="post" action="{{ url_for('login') }}" class="space-y-5">
+      <div>
+        <label for="username" class="mb-2 block text-sm font-semibold text-stone-300">Usuário</label>
+        <input id="username" name="username" type="text" autocomplete="username" required
+          class="w-full rounded-xl border border-white/10 bg-stone-900 px-4 py-3 text-white outline-none transition placeholder:text-stone-600 focus:border-amber-400"
+          placeholder="Digite seu usuário">
+      </div>
+      <div>
+        <label for="password" class="mb-2 block text-sm font-semibold text-stone-300">Senha</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required
+          class="w-full rounded-xl border border-white/10 bg-stone-900 px-4 py-3 text-white outline-none transition placeholder:text-stone-600 focus:border-amber-400"
+          placeholder="Digite sua senha">
+      </div>
+      <button type="submit" class="w-full rounded-xl bg-red-600 px-4 py-3.5 font-bold transition hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-stone-950">
+        Entrar
+      </button>
+    </form>
+    <p class="mt-6 text-center text-sm text-stone-500">
+      <a href="{{ url_for('index') }}" class="font-semibold text-amber-400 hover:text-amber-300">Voltar para a página inicial</a>
+    </p>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}SuperBurguer | Hambúrguer de verdade{% endblock %}
+{% block content %}
+<section class="relative isolate overflow-hidden">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-br from-red-950 via-stone-950 to-stone-950"></div>
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-28">
+    <div>
+      <span class="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm font-bold text-amber-300">
+        🍔 Sabor que surpreende
+      </span>
+      <h1 class="mt-6 text-5xl font-black leading-tight sm:text-6xl">
+        Seu próximo<br><span class="text-amber-400">hambúrguer</span><br>favorito.
+      </h1>
+      <p class="mt-6 max-w-lg text-lg leading-8 text-stone-300">
+        Ingredientes selecionados, carne suculenta e combinações feitas para matar a sua fome com estilo.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="{{ url_for('login') }}" class="rounded-full bg-red-600 px-7 py-3.5 font-bold text-white shadow-lg shadow-red-950/40 transition hover:-translate-y-0.5 hover:bg-red-500">
+          Acessar minha conta
+        </a>
+        <a href="#cardapio" class="rounded-full border border-white/20 px-7 py-3.5 font-bold transition hover:border-amber-400 hover:text-amber-300">
+          Ver destaques
+        </a>
+      </div>
+      {% if username %}
+        <p class="mt-5 text-sm text-green-300">Você está conectado como {{ username }}.</p>
+      {% endif %}
+    </div>
+    <div class="mx-auto flex aspect-square w-full max-w-md items-center justify-center rounded-full border border-amber-400/20 bg-gradient-to-br from-amber-400/20 to-red-600/20 p-8">
+      <div class="flex aspect-square w-full items-center justify-center rounded-full bg-stone-900 text-[10rem] shadow-2xl shadow-red-950/60 sm:text-[12rem]" role="img" aria-label="Ilustração de hambúrguer">🍔</div>
+    </div>
+  </div>
+</section>
+
+<section id="cardapio" class="mx-auto max-w-6xl px-5 py-16">
+  <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <p class="font-bold uppercase tracking-[0.2em] text-red-400">Feitos na hora</p>
+      <h2 class="mt-2 text-3xl font-black sm:text-4xl">Destaques da casa</h2>
+    </div>
+    <p class="text-stone-400">Uma pequena amostra do nosso sabor.</p>
+  </div>
+  <div class="grid gap-5 md:grid-cols-3">
+    {% for item in [
+      {"emoji":"🍔","name":"Classic Super","desc":"Blend bovino, queijo cheddar, alface e molho especial.","price":"R$ 24,90"},
+      {"emoji":"🥓","name":"Bacon Supreme","desc":"Cheddar cremoso, bacon crocante e cebola caramelizada.","price":"R$ 29,90"},
+      {"emoji":"🍟","name":"Combo Crocante","desc":"Hambúrguer da casa com batatas douradas.","price":"R$ 34,90"}
+    ] %}
+    <article class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-amber-400/40">
+      <div class="text-6xl">{{ item.emoji }}</div>
+      <h3 class="mt-5 text-xl font-extrabold">{{ item.name }}</h3>
+      <p class="mt-2 min-h-14 leading-6 text-stone-400">{{ item.desc }}</p>
+      <p class="mt-5 text-xl font-black text-amber-400">{{ item.price }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

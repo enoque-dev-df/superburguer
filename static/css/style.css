@@ -1,0 +1,9 @@
+/* Pequenos ajustes adicionais; o layout principal usa Tailwind CSS via CDN. */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  color: #1c1917;
+  background: #fbbf24;
+}

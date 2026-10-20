@@ -91,3 +91,6 @@ superburguer/
 Este é um projeto inicial para estudo. O login usa credenciais de demonstração configuráveis por variáveis de ambiente e **não** possui cadastro de usuários, banco de dados, recuperação de senha, proteção contra tentativas repetidas ou configuração completa de produção. Não publique assim na internet sem implementar esses controles, configurar HTTPS e definir uma `FLASK_SECRET_KEY` forte. Para produção, execute com um servidor WSGI como Gunicorn e mantenha `FLASK_DEBUG=0`.
 
 O Tailwind CSS está incluído pelo CDN para facilitar o protótipo. Para um projeto de produção, considere compilar os estilos localmente.
+# superburguer
+Repositório do app superburguer
+0860f0ed9256cdb5ad92377574b68cdd32458ba4

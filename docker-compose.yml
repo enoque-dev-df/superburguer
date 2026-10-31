@@ -4,7 +4,7 @@ services:
     build: .
     container_name: superburguer
     ports:
-      - "IP_REAL_DO_SERVIDOR:5000:5000"
+      - "5000:5000"
     environment:
       FLASK_DEBUG: "0"
       FLASK_SECRET_KEY: "${FLASK_SECRET_KEY}"
